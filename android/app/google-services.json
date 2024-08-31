@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "168746087000",
+    "project_id": "spots-782df",
+    "storage_bucket": "spots-782df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168746087000:android:46c5a75e707e9746b8502d",
+        "android_client_info": {
+          "package_name": "com.example.Spots"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBB9QmKD4Ol7XQprMCNScCGYKWXSLx11Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
