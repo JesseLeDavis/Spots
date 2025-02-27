@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:spots/features/authentication/presentation/log_in_sign_up.dart';
-import 'package:spots/features/map/presentation/map.dart';
+import 'package:spots/features/map/presentation/map_view.dart';
 import 'package:spots/features/splash.dart';
 
 enum AppRoute {
@@ -17,7 +17,7 @@ enum AppRoute {
 }
 
 GoRouter goRouter() => GoRouter(
-      initialLocation: '/',
+      initialLocation: '/${AppRoute.map.name}',
       debugLogDiagnostics: false,
       routes: [
         GoRoute(
@@ -30,12 +30,12 @@ GoRouter goRouter() => GoRouter(
               name: AppRoute.logInSignUp.name,
               builder: (context, state) => const LogInSignUpScreen(),
             ),
-            GoRoute(
-              path: AppRoute.map.name,
-              name: AppRoute.map.name,
-              builder: (context, state) => const MapPage(),
-            ),
           ],
+        ),
+        GoRoute(
+          path: '/${AppRoute.map.name}',
+          name: AppRoute.map.name,
+          builder: (context, state) => const MapPage(),
         ),
       ],
     );

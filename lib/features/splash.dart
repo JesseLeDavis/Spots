@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:spots/constants/padding.dart';
 import 'package:spots/constants/sizes.dart';
 import 'package:spots/gen/assets.gen.dart';
 import 'package:spots/routing/app_router.dart';
@@ -10,6 +9,7 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _SplashScreenState createState() => _SplashScreenState();
 }
 
@@ -48,57 +48,55 @@ class _SplashScreenState extends State<SplashScreen>
         foregroundColor: ColorThemes.pureWhite,
         title: const Text('Mission Command'),
       ),
-      body: MainHorizontalPadding(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            AnimatedBuilder(
-              animation: _animation,
-              builder: (context, child) {
-                return Transform.translate(
-                  offset: Offset(0, _animation.value),
-                  child: child,
-                );
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          AnimatedBuilder(
+            animation: _animation,
+            builder: (context, child) {
+              return Transform.translate(
+                offset: Offset(0, _animation.value),
+                child: child,
+              );
+            },
+            child: Assets.icons.bits.image(width: 200),
+          ),
+          SizedBox(
+            width: double.infinity,
+            child: TextButton(
+              onPressed: () {},
+              child: const Text('Home'),
+            ),
+          ),
+          gapH16,
+          SizedBox(
+            width: double.infinity,
+            child: TextButton(
+              onPressed: () {
+                context.pushNamed(AppRoute.logInSignUp.name);
               },
-              child: Assets.icons.bits.image(width: 200),
+              child: const Text('Log in or Sign up'),
             ),
-            SizedBox(
-              width: double.infinity,
-              child: TextButton(
-                onPressed: () {},
-                child: const Text('Home'),
-              ),
+          ),
+          gapH16,
+          SizedBox(
+            width: double.infinity,
+            child: TextButton(
+              onPressed: () {},
+              child: const Text('Profile'),
             ),
-            gapH16,
-            SizedBox(
-              width: double.infinity,
-              child: TextButton(
-                onPressed: () {
-                  context.pushNamed(AppRoute.logInSignUp.name);
-                },
-                child: const Text('Log in or Sign up'),
-              ),
+          ),
+          gapH16,
+          SizedBox(
+            width: double.infinity,
+            child: TextButton(
+              onPressed: () {
+                context.pushNamed(AppRoute.map.name);
+              },
+              child: const Text('Map'),
             ),
-            gapH16,
-            SizedBox(
-              width: double.infinity,
-              child: TextButton(
-                onPressed: () {},
-                child: const Text('Profile'),
-              ),
-            ),
-            gapH16,
-            SizedBox(
-              width: double.infinity,
-              child: TextButton(
-                onPressed: () {
-                  context.pushNamed(AppRoute.map.name);
-                },
-                child: const Text('Map'),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

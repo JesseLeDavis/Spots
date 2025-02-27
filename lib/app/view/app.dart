@@ -41,6 +41,38 @@ class _App extends ConsumerWidget {
             textStyle: TextThemes.pureWhite.headline,
           ),
         ),
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: ColorThemes.darkGrey,
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 24,
+            vertical: 16,
+          ),
+          hintStyle: TextThemes.secondaryText.body,
+          labelStyle: TextThemes.secondaryText.body,
+          errorStyle:
+              TextThemes.error.footnote.copyWith(color: ColorThemes.alert),
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              width: 0,
+              color: Colors.transparent,
+            ),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              width: 0,
+              color: Colors.transparent,
+            ),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          border: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: ColorThemes.lightGrey,
+            ),
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
         textTheme: TextTheme(
           displayLarge: TextThemes.pureWhite.largeTitle,
           headlineLarge: TextThemes.pureWhite.title1,

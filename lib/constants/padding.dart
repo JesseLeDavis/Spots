@@ -1,14 +1,14 @@
 import 'package:flutter/widgets.dart';
 
-class MainHorizontalPadding extends StatelessWidget {
-  const MainHorizontalPadding({super.key, required this.child});
+class MainAllPadding extends StatelessWidget {
+  const MainAllPadding({super.key, required this.children});
 
-  final Widget child;
+  final List<Widget> children;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: child,
+      padding: const EdgeInsets.all(20),
+      child: Column(children: children),
     );
   }
 }
